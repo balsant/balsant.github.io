@@ -37,6 +37,11 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
+/* Active/Selected state */
+nav ul li a.active {
+    background-color: #1A5276; /* Darker color for the selected button */
+}
+
 /* Main Content */
 .main-content {
     text-align: center;
