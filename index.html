@@ -3,15 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balsant's GitHub Page</title>
+    <title>Balsant's Homepage</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #007bff;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Content Container */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Headings and Blocks */
+        .container h2 {
+            color: #2E86C1;
+            text-align: center;
+        }
+
+        .block {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .block h3 {
+            color: #2E86C1;
+            margin-bottom: 15px;
+        }
+
+        .block p, .block ul {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .block ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .block ul li {
+            padding: 5px 0;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .block ul li:last-child {
+            border-bottom: none;
+        }
+
+        .block a {
+            color: #2E86C1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .block a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header with Navigation -->
     <header>
         <nav>
             <ul>
-                <li><a href="about.html">About</a></li>
+                <li><a href="index.html">About</a></li>
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="https://balsant.com" target="_blank">Website</a></li>
@@ -19,15 +128,45 @@
         </nav>
     </header>
 
-    <!-- Main Section -->
-    <section class="main-content">
-        <h1>Welcome to Balsant's GitHub Webpage!</h1>
-        <p>This is my personal webpage where you can find information about my work, publications, and resources.</p>
-    </section>
+    <!-- Main Content (About Page) -->
+    <div class="container">
+        <div class="block">
+            <h2>Balsant Shivanand Tiwari</h2>
+            <p>Marie Curie PhD Fellow<br>
+            School of Physics and Astronomy<br>
+            University of Birmingham, UK</p>
+        </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Balsant's GitHub Webpage. All Rights Reserved.</p>
-    </footer>
+        <div class="block">
+            <h3>Research Interests:</h3>
+            <ul>
+                <li>Ultracold Atoms in Optical Lattices</li>
+                <li>Bose-Einstein Condensation (BEC)</li>
+                <li>Quantum Physics and Its Foundations</li>
+                <li>Quantum Entanglement</li>
+                <li>Many-Body Physics</li>
+                <li>Quantum Sensors and Timing</li>
+            </ul>
+            <p>Currently, I am working towards creating a Bose-Einstein Condensate (BEC) of strontium atoms. My future research aims to explore long-range dipole-dipole interactions with lattice-trapped strontium atoms in a Mott-insulator state. I work with Prof. Dr. Yeshpal Singh at University of Birmingham, UK.</p>
+        </div>
+
+        <div class="block">
+            <h3>Other Interests:</h3>
+            <ul>
+                <li>Mathematics in General</li>
+                <li>Philosophy, Philosophy of Science</li>
+                <li>Consciousness and Quantum Physics</li>
+                <li>Programming</li>
+                <li>Electronics</li>
+                <li>Literary Creation - <a href="https://www.balsant.com/writing">Read My Writings</a></li>
+                <li>Reading and Collecting Literatures</li>
+                <li>Studying Shastras</li>
+                <li>Yoga and Meditation</li>
+                <li>Martial Arts</li>
+                <li>Traveling</li>
+                <li>Running, Games, and Sports</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
