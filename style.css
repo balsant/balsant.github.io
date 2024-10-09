@@ -39,7 +39,7 @@ nav ul li a:hover {
 
 /* Active/Selected state */
 nav ul li a.active {
-    background-color: #1A5276 !important; /* Ensures it's applied */
+    background-color: #e74c3c !important; /* Ensures it's applied */
 }
 
 /* Main Content */
