@@ -45,6 +45,11 @@
             background-color: #1A5276;
         }
 
+        /* Active/Selected state */
+        nav ul li a.active {
+            background-color: #1A5276 !important; /* Active button color */
+        }
+
         /* Language Selector */
         .lang-selector {
             position: absolute;
@@ -152,9 +157,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="/" class="active">About</a></li>  <!-- About is active here -->
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="resources.html">Resources</a></li>
+                <li><a href="/" id="aboutLink">About</a></li>
+                <li><a href="publications.html" id="publicationsLink">Publications</a></li>
+                <li><a href="resources.html" id="resourcesLink">Resources</a></li>
                 <li><a href="https://balsant.com" target="_blank">Website</a></li>
             </ul>
         </nav>
@@ -244,7 +249,9 @@
         </div>
     </div>
 
+    <!-- JavaScript for Language Selector and Active Class -->
     <script>
+        // Language toggling functions
         function showEnglish() {
             document.getElementById('englishBox').style.display = 'block';
             document.getElementById('hindiBox').style.display = 'none';
@@ -253,6 +260,20 @@
         function showHindi() {
             document.getElementById('englishBox').style.display = 'none';
             document.getElementById('hindiBox').style.display = 'block';
+        }
+
+        // Set active class based on the current URL
+        const currentPath = window.location.pathname;
+        const aboutLink = document.getElementById('aboutLink');
+        const publicationsLink = document.getElementById('publicationsLink');
+        const resourcesLink = document.getElementById('resourcesLink');
+
+        if (currentPath === '/' || currentPath === '/index.html') {
+            aboutLink.classList.add('active');
+        } else if (currentPath.includes('publications.html')) {
+            publicationsLink.classList.add('active');
+        } else if (currentPath.includes('resources.html')) {
+            resourcesLink.classList.add('active');
         }
     </script>
 </body>
