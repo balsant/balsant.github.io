@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Balsant | Balsant's Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Language Selector Styling */
+        .lang-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .lang-selector button {
+            padding: 8px 16px;
+            margin: 0 5px;
+            border: none;
+            background-color: #0073e6;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .lang-selector button.hindi {
+            background-color: #ff9933;
+        }
+
+        .lang-selector button:hover {
+            background-color: #005bb5;
+        }
+
+        .lang-selector button.hindi:hover {
+            background-color: #e68a00;
+        }
+
+        /* Container for Content */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Headings and Blocks */
+        .container h1, .container h2 {
+            color: #2E86C1;
+            text-align: center;
+        }
+
+        .block {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .block h3 {
+            color: #2E86C1;
+            margin-bottom: 15px;
+        }
+
+        .block p, .block ul {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .block ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .block ul li {
+            padding: 5px 0;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .block ul li:last-child {
+            border-bottom: none;
+        }
+
+        .block a {
+            color: #2E86C1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .block a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-selector">
+        <button onclick="showEnglish()">English</button>
+        <button class="hindi" onclick="showHindi()">हिंदी</button>
+    </div>
+
+    <div class="container">
+        <!-- English Version -->
+        <div class="box" id="englishBox">
+            <div class="block">
+                <h1>Welcome to Balsant's Homepage!</h1>
+                <h2>Balsant Shivanand Tiwari</h2>
+                <p>Marie Curie PhD Fellow<br>
+                School of Physics and Astronomy<br>
+                University of Birmingham, UK</p>
+            </div>
+
+            <div class="block">
+                <h3>Research Interests:</h3>
+                <ul>
+                    <li>Ultracold Atoms in Optical Lattices</li>
+                    <li>Bose-Einstein Condensation (BEC)</li>
+                    <li>Quantum Physics and Its Foundations</li>
+                    <li>Quantum Entanglement</li>
+                    <li>Many-Body Physics</li>
+                    <li>Quantum Sensors and Timing</li>
+                </ul>
+                <p>Currently, I am working towards creating a Bose-Einstein Condensate (BEC) of strontium atoms. My future research aims to explore long-range dipole-dipole interactions with lattice-trapped strontium atoms in a Mott-insulator state. I work with Prof. Dr. Yeshpal Singh at University of Birmingham, UK.</p>
+            </div>
+
+            <div class="block">
+                <h3>Other Interests:</h3>
+                <ul>
+                    <li>Mathematics in General</li>
+                    <li>Philosophy, Philosophy of Science</li>
+                    <li>Consciousness and Quantum Physics</li>
+                    <li>Programming</li>
+                    <li>Electronics</li>
+                    <li>Literary Creation - <a href="https://www.balsant.com/writing">Read My Writings</a></li>
+                    <li>Reading and Collecting Literatures</li>
+                    <li>Studying Shastras</li>
+                    <li>Yoga and Meditation</li>
+                    <li>Martial Arts</li>
+                    <li>Traveling</li>
+                    <li>Running, Games, and Sports</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Hindi Version -->
+        <div class="box" id="hindiBox" style="display:none;">
+            <div class="block">
+                <h1>!! सुस्वागतम्‌ !!</h1>
+                <h2>बालसंत शिवानंद तिवारी</h2>
+                <p>मैरी क्यूरी पीएचडी फेलो<br>
+                भौतिकी और खगोल विज्ञान विभाग<br>
+                बर्मिंघम विश्वविद्यालय, यूके</p>
+            </div>
+
+            <div class="block">
+                <h3>अनुसंधान रुचियाँ:</h3>
+                <ul>
+                    <li>ऑप्टिकल लैटिसेस में अल्ट्राकोल्ड परमाणु</li>
+                    <li>बोस-आइंस्टीन संघनन (BEC)</li>
+                    <li>क्वांटम भौतिकी और इसके सिद्धांत</li>
+                    <li>क्वांटम एंटैंगलमेंट</li>
+                    <li>क्वांटम सेंसर और समय-निर्धारण</li>
+                </ul>
+                <p>वर्तमान में, मैं स्ट्रोन्शियम परमाणुओं का एक बोस-आइंस्टीन संघनन (BEC) बनाने पर काम कर रहा हूँ। इसके बाद मौट्ट इंसुलेटर की अवस्था प्राप्त करनी है, जिसमें परमाणु और नियंत्रित हो जायेंगे। तब उन परमाणुओं के माध्यम से उनके मध्य हो रहे दीर्घ दूरी वाले परस्पर क्रिया (आकर्षण-विकर्षण) और क्वांटम एंटैंगलमेंट आदि को समझना और अध्ययन करना है। यह कार्य मैं यूके के बर्मिंघम विश्वविद्यालय में प्रोफेसर डॉ. यशपाल सिंह जी के दिशा निर्देश में कर रहा हूँ।</p>
+            </div>
+
+            <div class="block">
+                <h3>अन्य रुचियाँ:</h3>
+                <ul>
+                    <li>गणित</li>
+                    <li>दर्शनशास्त्र, विज्ञान का दर्शन</li>
+                    <li>चेतना और क्वांटम भौतिकी</li>
+                    <li>प्रोग्रामिंग</li>
+                    <li>इलेक्ट्रॉनिक्स</li>
+                    <li>साहित्य रचना - <a href="https://www.balsant.com/writing">मेरी रचनाएँ पढ़ें</a></li>
+                    <li>साहित्य पढ़ना और संग्रह करना</li>
+                    <li>शास्त्र अध्ययन</li>
+                    <li>योग और ध्यान</li>
+                    <li>मार्शल आर्ट्स</li>
+                    <li>भ्रमण</li>
+                    <li>खेल-कूद, दौड़ना</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showEnglish() {
+            document.getElementById('englishBox').style.display = 'block';
+            document.getElementById('hindiBox').style.display = 'none';
+        }
+
+        function showHindi() {
+            document.getElementById('englishBox').style.display = 'none';
+            document.getElementById('hindiBox').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
