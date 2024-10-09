@@ -45,6 +45,11 @@
             background-color: #1A5276;
         }
 
+        /* Active/Selected state */
+        nav ul li a.active {
+            background-color: #1A5276 !important; /* Active button color */
+        }
+
         /* Content Container */
         .container {
             width: 100%;
@@ -107,9 +112,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="/">About</a></li>  <!-- About is not active here -->
-                <li><a href="publications.html" class="active">Publications</a></li> <!-- Publications is active -->
-                <li><a href="resources.html">Resources</a></li>
+                <li><a href="/" id="aboutLink">About</a></li>  <!-- About is not active here -->
+                <li><a href="publications.html" id="publicationsLink">Publications</a></li> <!-- Publications is active -->
+                <li><a href="resources.html" id="resourcesLink">Resources</a></li>
                 <li><a href="https://balsant.com" target="_blank">Website</a></li>
             </ul>
         </nav>
@@ -124,7 +129,6 @@
             <p class="authors">S. Zhang, B. S. Tiwari, S. Ganesh, Y. Singh, and V. V. Flambaum</p>
             <p class="source">Phys. Rev. Research <span style="font-style: italic;">(accepted: 07 October 2024)</span></p>
         </div>
-
 
         <div class="publication">
             <h3>Collective scattering in lattice-trapped Sr atoms via dipole-dipole interactions</h3>
@@ -144,5 +148,22 @@
             <p class="source">2022 Joint Conference of the European Frequency and Time Forum and IEEE International Frequency Control Symposium (EFTF/IFCS)</p>
         </div>
     </div>
+
+    <!-- JavaScript to Set Active Class Dynamically -->
+    <script>
+        // Set active class based on the current URL
+        const currentPath = window.location.pathname;
+        const aboutLink = document.getElementById('aboutLink');
+        const publicationsLink = document.getElementById('publicationsLink');
+        const resourcesLink = document.getElementById('resourcesLink');
+
+        if (currentPath === '/' || currentPath === '/index.html') {
+            aboutLink.classList.add('active');
+        } else if (currentPath.includes('publications.html')) {
+            publicationsLink.classList.add('active');
+        } else if (currentPath.includes('resources.html')) {
+            resourcesLink.classList.add('active');
+        }
+    </script>
 </body>
 </html>
