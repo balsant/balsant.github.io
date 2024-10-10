@@ -114,6 +114,7 @@
             <ul>
                 <li><a href="/" id="aboutLink">About</a></li>  <!-- About is not active here -->
                 <li><a href="publications.html" id="publicationsLink">Publications</a></li> <!-- Publications is active -->
+                <li><a href="simulations.html" id="simulationsLink">Simulations</a></li>
                 <li><a href="resources.html" id="resourcesLink">Resources</a></li>
                 <li><a href="https://balsant.com" target="_blank">Website</a></li>
             </ul>
@@ -155,12 +156,15 @@
         const currentPath = window.location.pathname;
         const aboutLink = document.getElementById('aboutLink');
         const publicationsLink = document.getElementById('publicationsLink');
+        const simulationsLink = document.getElementById('simulationsLink');
         const resourcesLink = document.getElementById('resourcesLink');
 
         if (currentPath === '/' || currentPath === '/index.html') {
             aboutLink.classList.add('active');
         } else if (currentPath.includes('publications.html')) {
             publicationsLink.classList.add('active');
+        } else if (currentPath.includes('simulations.html')) {
+            simulationsLink.classList.add('active');
         } else if (currentPath.includes('resources.html')) {
             resourcesLink.classList.add('active');
         }
