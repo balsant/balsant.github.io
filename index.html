@@ -4,147 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balsant's Homepage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
-        /* Navigation Bar */
-        header {
-            background-color: #2E86C1; /* Matching the color with the name */
-            padding: 20px 0;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        nav ul li a:hover {
-            background-color: #1A5276;
-        }
-
-        /* Active/Selected state */
-        nav ul li a.active {
-            background-color: #1A5276 !important; /* Active button color */
-        }
-
-        /* Language Selector */
-        .lang-selector {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
-        .lang-selector button {
-            padding: 8px 16px;
-            margin: 0 5px;
-            border: none;
-            background-color: #2E86C1;
-            color: white;
-            cursor: pointer;
-            font-size: 14px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .lang-selector button.hindi {
-            background-color: #ff9933;
-        }
-
-        .lang-selector button:hover {
-            background-color: #1A5276;
-        }
-
-        /* Content Container */
-        .container {
-            width: 100%;
-            max-width: 900px;
-            margin: 80px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        /* Headings and Blocks */
-        .container h2 {
-            color: #2E86C1;
-            text-align: center;
-        }
-
-        .block {
-            background-color: #f9f9f9;
-            padding: 20px;
-            margin-bottom: 40px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .block h3 {
-            color: #2E86C1;
-            margin-bottom: 15px;
-        }
-
-        .block p, .block ul {
-            font-size: 16px;
-            line-height: 1.8;
-        }
-
-        .block ul {
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .block ul li {
-            padding: 5px 0;
-            margin-bottom: 5px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .block ul li:last-child {
-            border-bottom: none;
-        }
-
-        .block a {
-            color: #2E86C1;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .block a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Language Selector -->
@@ -156,6 +16,11 @@
     <!-- Header with Navigation -->
     <header>
         <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul>
                 <li><a href="/" id="aboutLink">About</a></li>
                 <li><a href="publications.html" id="publicationsLink">Publications</a></li>
@@ -219,15 +84,15 @@
             </div>
 
             <div class="block">
-                <h3>अनुसंधान रुचियाँ:</h3>
+                <h3>अनुसंधान रुचियां:</h3>
                 <ul>
                     <li>ऑप्टिकल लैटिसेस में अल्ट्राकोल्ड परमाणु</li>
                     <li>बोस-आइंस्टीन संघनन (BEC)</li>
-                    <li>क्वांटम भौतिकी और इसके सिद्धांत</li>
+                    <li>क्वांटम भौतिकी और इसके सिद्धांत्र</li>
                     <li>क्वांटम एंटैंगलमेंट</li>
-                    <li>क्वांटम सेंसर और समय-निर्धारण</li>
+                    <li>क्वांटम सेंसर और समय- निर्धारण</li>
                 </ul>
-                <p>वर्तमान में, मैं स्ट्रोन्शियम परमाणुओं का एक बोस-आइंस्टीन संघनन (BEC) बनाने पर काम कर रहा हूँ। इसके बाद मौट्ट इंसुलेटर की अवस्था प्राप्त करनी है, जिसमें परमाणु और नियंत्रित हो जायेंगे। तब उन परमाणुओं के माध्यम से उनके मध्य हो रहे दीर्घ दूरी वाले परस्पर क्रिया (आकर्षण-विकर्षण) और क्वांटम एंटैंगलमेंट आदि को समझना और अध्ययन करना है। यह कार्य मैं यूके के बर्मिंघम विश्वविद्यालय में प्रोफेसर डॉ. यशपाल सिंह जी के दिशा निर्देश में कर रहा हूँ।</p>
+                <p>वर्तमान में, मैं स्ट्रोन्शियम परमाणुओं का एक बोस-आइंस्टीन संघनन (BEC) बनाने पर काम कर रहा हूं। अगले के शोधों में मैट इंसुलेटर स्थिति पर याति परमाणु और नियमित्र हो जायेंगे। यह कार्य मैं यूके के बर्मिंघम विश्वविद्यालय में प्रोफेसर डॉक्टर यशपाल सिंह जी के दिशा निर्देश में कर रहा हूं।</p>
             </div>
 
             <div class="block">
@@ -238,19 +103,19 @@
                     <li>चेतना और क्वांटम भौतिकी</li>
                     <li>प्रोग्रामिंग</li>
                     <li>इलेक्ट्रॉनिक्स</li>
-                    <li>साहित्य रचना - <a href="https://www.balsant.com/writing">मेरी रचनाएँ पढ़ें</a></li>
+                    <li>साहित्य रचना - <a href="https://www.balsant.com/writing">मेरी रचनाएं पढ़ें</a></li>
                     <li>साहित्य पढ़ना और संग्रह करना</li>
                     <li>शास्त्र अध्ययन</li>
                     <li>योग और ध्यान</li>
                     <li>मार्शल आर्ट्स</li>
                     <li>भ्रमण</li>
-                    <li>खेल-कूद, दौड़ना</li>
+                    <li>खेल-कूद, दौड़ना</li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript for Language Selector and Active Class -->
+    <!-- JavaScript for Language Selector, Hamburger Menu, and Active Class -->
     <script>
         // Language toggling functions
         function showEnglish() {
@@ -261,6 +126,12 @@
         function showHindi() {
             document.getElementById('englishBox').style.display = 'none';
             document.getElementById('hindiBox').style.display = 'block';
+        }
+
+        // Hamburger menu toggle
+        function toggleMenu() {
+            const navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('show');
         }
 
         // Set active class based on the current URL
