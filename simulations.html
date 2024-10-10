@@ -4,21 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulations | Balsant's Homepage</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #2E86C1; /* Same color as the name */
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #1A5276;
+        }
+
+        /* Active/Selected state */
+        nav ul li a.active {
+            background-color: #1A5276 !important; /* Active button color */
+        }
+
+        /* Content Container */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Headings and Simulations Blocks */
+        .container h1 {
+            color: #2E86C1;
+            text-align: center;
+        }
+
+        .simulation {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .simulation h3 {
+            color: #2E86C1;
+            margin-bottom: 10px;
+        }
+
+        .simulation img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .simulation a {
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            color: #2E86C1;
+            text-decoration: none;
+        }
+
+        .simulation a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header with Navigation -->
     <header>
         <nav>
-            <div class="hamburger" onclick="toggleMenu()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
             <ul>
                 <li><a href="/" id="aboutLink">About</a></li>
                 <li><a href="publications.html" id="publicationsLink">Publications</a></li>
-                <li><a href="simulations.html" id="simulationsLink">Simulations</a></li>
+                <li><a href="simulations.html" id="simulationsLink">Simulations</a></li> <!-- Active link -->
                 <li><a href="resources.html" id="resourcesLink">Resources</a></li>
                 <li><a href="https://balsant.com" target="_blank">Balsant.com</a></li>
             </ul>
@@ -39,6 +135,8 @@
             </h3>
             <img src="https://balsant.github.io/simulations/transport/plot1.png" alt="Transport Simulation Plot">
         </div>
+
+
 
         <!-- Second Simulation Section -->
         <div class="simulation">
@@ -69,14 +167,8 @@
         </div>
     </div>
 
-    <!-- JavaScript to Set Active Class Dynamically and Toggle Hamburger Menu -->
+    <!-- JavaScript to Set Active Class Dynamically -->
     <script>
-        // Hamburger menu toggle
-        function toggleMenu() {
-            const navUl = document.querySelector('nav ul');
-            navUl.classList.toggle('show');
-        }
-
         // Set active class based on the current URL
         const currentPath = window.location.pathname;
         const aboutLink = document.getElementById('aboutLink');
