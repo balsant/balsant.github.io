@@ -4,119 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications | Balsant's Homepage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
-        /* Navigation Bar */
-        header {
-            background-color: #2E86C1; /* Same color as the name */
-            padding: 20px 0;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        nav ul li a:hover {
-            background-color: #1A5276;
-        }
-
-        /* Active/Selected state */
-        nav ul li a.active {
-            background-color: #1A5276 !important; /* Active button color */
-        }
-
-        /* Content Container */
-        .container {
-            width: 100%;
-            max-width: 900px;
-            margin: 80px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        /* Headings and Publication Blocks */
-        .container h1 {
-            color: #2E86C1;
-            text-align: center;
-        }
-
-        .publication {
-            background-color: #f9f9f9;
-            padding: 20px;
-            margin-bottom: 40px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-
-        .publication h3 {
-            color: #2E86C1;
-            margin-bottom: 10px;
-        }
-
-        .publication p {
-            font-size: 16px;
-            line-height: 1.8;
-        }
-
-        .publication p i {
-            font-size: 14px;
-            color: #777;
-        }
-
-        .publication p.authors {
-            font-weight: bold;
-        }
-
-        .publication p.source {
-            font-style: italic;
-            color: #555;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header with Navigation -->
     <header>
         <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul>
-                <li><a href="/" id="aboutLink">About</a></li>  <!-- About is not active here -->
-                <li><a href="publications.html" id="publicationsLink">Publications</a></li> <!-- Publications is active -->
+                <li><a href="/" id="aboutLink">About</a></li>
+                <li><a href="publications.html" id="publicationsLink">Publications</a></li>
                 <li><a href="simulations.html" id="simulationsLink">Simulations</a></li>
                 <li><a href="resources.html" id="resourcesLink">Resources</a></li>
-                <li><a href="https://balsant.com" target="_blank">Website</a></li>
+                <li><a href="https://balsant.com" target="_blank">Balsant.com</a></li>
             </ul>
         </nav>
     </header>
@@ -126,7 +30,7 @@
         <h1>Publications</h1>
 
         <div class="publication">
-            <h3>Absolute frequency measurements on the 5⁢s⁢5⁢p3⁢P0 → 5⁢s⁢6⁢d3⁢𝐷1 transition in strontium</h3>
+            <h3>Absolute frequency measurements on the 5s5p3P0 → 5s6d3D1 transition in strontium</h3>
             <p class="authors">S. Zhang, B. S. Tiwari, S. Ganesh, Y. Singh, and V. V. Flambaum</p>
             <p class="source">Phys. Rev. Research <span style="font-style: italic;">(accepted: 07 October 2024)</span></p>
         </div>
@@ -150,8 +54,14 @@
         </div>
     </div>
 
-    <!-- JavaScript to Set Active Class Dynamically -->
+    <!-- JavaScript to Set Active Class Dynamically and Toggle Hamburger Menu -->
     <script>
+        // Hamburger menu toggle
+        function toggleMenu() {
+            const navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('show');
+        }
+
         // Set active class based on the current URL
         const currentPath = window.location.pathname;
         const aboutLink = document.getElementById('aboutLink');
