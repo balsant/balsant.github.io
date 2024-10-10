@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulations | Balsant's Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #2E86C1; /* Same color as the name */
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #1A5276;
+        }
+
+        /* Active/Selected state */
+        nav ul li a.active {
+            background-color: #1A5276 !important; /* Active button color */
+        }
+
+        /* Content Container */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Headings and Simulations Blocks */
+        .container h1 {
+            color: #2E86C1;
+            text-align: center;
+        }
+
+        .simulation {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .simulation h3 {
+            color: #2E86C1;
+            margin-bottom: 10px;
+        }
+
+        .simulation img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .simulation a {
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            color: #2E86C1;
+            text-decoration: none;
+        }
+
+        .simulation a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/" id="aboutLink">About</a></li>
+                <li><a href="publications.html" id="publicationsLink">Publications</a></li>
+                <li><a href="simulations.html" id="simulationsLink">Simulations</a></li> <!-- Active link -->
+                <li><a href="resources.html" id="resourcesLink">Resources</a></li>
+                <li><a href="https://balsant.com" target="_blank">Website</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content (Simulations Page) -->
+    <div class="container">
+        <h1>Simulations</h1>
+
+        <!-- First Simulation Section -->
+        <div class="simulation">
+            <h3>Transport of dipole trapped Sr atoms via 1064 nm dipole laser</h3>
+            <img src="https://balsant.github.io/simulations/transport/plot1.png" alt="Transport Simulation Plot">
+            <a href="https://raw.githubusercontent.com/balsant/balsant.github.io/refs/heads/main/simulations/transport/atoms-loss-1.html" target="_blank">View Simulation</a>
+        </div>
+
+        <!-- Second Simulation Section -->
+        <div class="simulation">
+            <h3>Section 2</h3>
+            <img src="https://balsant.github.io/simulations/transport/plot2.png" alt="Section 2 Plot">
+            <a href="https://raw.githubusercontent.com/balsant/balsant.github.io/refs/heads/main/simulations/transport/section2.html" target="_blank">View Simulation</a>
+        </div>
+
+        <!-- Third Simulation Section -->
+        <div class="simulation">
+            <h3>Section 3</h3>
+            <img src="https://balsant.github.io/simulations/transport/plot3.png" alt="Section 3 Plot">
+            <a href="https://raw.githubusercontent.com/balsant/balsant.github.io/refs/heads/main/simulations/transport/section3.html" target="_blank">View Simulation</a>
+        </div>
+
+        <!-- Fourth Simulation Section -->
+        <div class="simulation">
+            <h3>Section 4</h3>
+            <img src="https://balsant.github.io/simulations/transport/plot4.png" alt="Section 4 Plot">
+            <a href="https://raw.githubusercontent.com/balsant/balsant.github.io/refs/heads/main/simulations/transport/section4.html" target="_blank">View Simulation</a>
+        </div>
+
+        <!-- Fifth Simulation Section -->
+        <div class="simulation">
+            <h3>Section 5</h3>
+            <img src="https://balsant.github.io/simulations/transport/plot5.png" alt="Section 5 Plot">
+            <a href="https://raw.githubusercontent.com/balsant/balsant.github.io/refs/heads/main/simulations/transport/section5.html" target="_blank">View Simulation</a>
+        </div>
+    </div>
+
+    <!-- JavaScript to Set Active Class Dynamically -->
+    <script>
+        // Set active class based on the current URL
+        const currentPath = window.location.pathname;
+        const aboutLink = document.getElementById('aboutLink');
+        const publicationsLink = document.getElementById('publicationsLink');
+        const simulationsLink = document.getElementById('simulationsLink');
+        const resourcesLink = document.getElementById('resourcesLink');
+
+        if (currentPath === '/' || currentPath === '/index.html') {
+            aboutLink.classList.add('active');
+        } else if (currentPath.includes('publications.html')) {
+            publicationsLink.classList.add('active');
+        } else if (currentPath.includes('simulations.html')) {
+            simulationsLink.classList.add('active');
+        } else if (currentPath.includes('resources.html')) {
+            resourcesLink.classList.add('active');
+        }
+    </script>
+</body>
+</html>
