@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources | Balsant's Homepage</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f9;
-            color: #333;
-        }
         .collapsible {
             background-color: #777;
             color: white;
@@ -33,16 +27,24 @@
             background-color: #f9f9f9;
             transition: max-height 0.2s ease-out;
         }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 10px auto;
-        }
     </style>
 </head>
 <body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="simulations.html">Simulations</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="https://balsant.com" target="_blank">Website</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
-        <h2>Resources</h2>
+        <h1>Resources</h1>
         <button type="button" class="collapsible">Notes</button>
         <div class="content">
             <p><a href="link_to_notes.pdf" target="_blank">Quantum Mechanics Notes</a></p>
