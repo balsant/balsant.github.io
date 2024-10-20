@@ -1,11 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources | Balsant's Homepage</title>
-    <link rel="stylesheet" href="style.css">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #2E86C1; /* Same color as the name */
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #1A5276;
+        }
+
+        /* Active/Selected state */
+        nav ul li a.active {
+            background-color: #1A5276 !important; /* Active button color */
+        }
+
+        /* Content Container */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        
         .collapsible {
             background-color: #2E86C1; /* Header blue */
             color: white;
