@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .collapsible {
-            background-color: #007bff; /* Use the primary color */
+            background-color: #007bff; /* Header blue */
             color: white;
             cursor: pointer;
             padding: 10px 20px;
@@ -27,7 +27,7 @@
         }
 
         .active, .collapsible:hover {
-            background-color: #1A5276;
+            background-color: #1A5276; /* Darker blue on hover */
         }
 
         .active:after {
@@ -40,7 +40,22 @@
             overflow: hidden;
             background-color: #f9f9f9;
             transition: max-height 0.2s ease-out;
-            margin-bottom: 20px; /* Add spacing after expanded content */
+            margin-bottom: 20px; /* Space below expanded content */
+        }
+
+        footer {
+            position: static; /* Override the fixed position from the global style if necessary */
+            margin-top: 20px; /* Ensure there is space at the bottom of the page */
+            background-color: #007bff; /* Footer blue */
+            color: white;
+            text-align: right;
+            padding: 10px 20px;
+            width: 100%; /* Ensure full width */
+            box-shadow: none; /* Remove any shadow if it was globally applied */
+        }
+
+        footer small {
+            font-size: 0.75em; /* Smaller font size for the copyright text */
         }
     </style>
 </head>
