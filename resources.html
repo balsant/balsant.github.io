@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Balsant's Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+        .active, .collapsible:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            transition: max-height 0.2s ease-out;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Resources</h2>
+        <button type="button" class="collapsible">Notes</button>
+        <div class="content">
+            <p><a href="link_to_notes.pdf" target="_blank">Quantum Mechanics Notes</a></p>
+            <p><a href="link_to_additional_notes.pdf" target="_blank">Advanced Quantum Theory</a></p>
+        </div>
+
+        <button type="button" class="collapsible">Strontium</button>
+        <div class="content">
+            <p><a href="link_to_strontium_research.pdf" target="_blank">Strontium Research Overview</a></p>
+            <p><a href="link_to_more_research.pdf" target="_blank">Strontium Laser Cooling Techniques</a></p>
+        </div>
+
+        <button type="button" class="collapsible">Papers</button>
+        <div class="content">
+            <p><a href="link_to_paper1.pdf" target="_blank">Bose-Einstein Condensates Paper</a></p>
+            <p><a href="link_to_paper2.pdf" target="_blank">Laser Cooling Research</a></p>
+        </div>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
