@@ -7,30 +7,55 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .collapsible {
-            background-color: #777;
+            background-color: #007bff; /* Matching the header color */
             color: white;
             cursor: pointer;
-            padding: 18px;
+            padding: 10px 15px;
             width: 100%;
             border: none;
             text-align: left;
             outline: none;
-            font-size: 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px; /* Spacing between sections */
         }
+
+        .collapsible:after {
+            content: '+';
+            color: white;
+            font-weight: bold;
+            float: right;
+        }
+
         .active, .collapsible:hover {
-            background-color: #555;
+            background-color: #1A5276;
         }
+
+        .active:after {
+            content: '-';
+        }
+
         .content {
             padding: 0 18px;
             display: none;
             overflow: hidden;
             background-color: #f9f9f9;
             transition: max-height 0.2s ease-out;
+            margin-bottom: 20px; /* Spacing after expanded content */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 160px auto 40px; /* Adjusted for fixed header and footer */
+            background: #fff; /* Background for the content */
+            padding: 20px; /* Padding around the content */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            border-radius: 8px; /* Rounded corners for modern look */
         }
     </style>
 </head>
 <body>
-    <!-- Header with Navigation -->
     <header>
         <nav>
             <ul>
@@ -43,7 +68,7 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container main-content">
         <h1>Resources</h1>
         <button type="button" class="collapsible">Notes</button>
         <div class="content">
@@ -63,6 +88,10 @@
             <p><a href="link_to_paper2.pdf" target="_blank">Laser Cooling Research</a></p>
         </div>
     </div>
+
+    <footer>
+        <p>Copyright © 2024 Balsant's Homepage</p>
+    </footer>
 
     <script>
         var coll = document.getElementsByClassName("collapsible");
