@@ -45,6 +45,20 @@
         nav ul li a:hover {
             background-color: #1A5276;
         }
+        footer {
+            position: static; /* Override the fixed position from the global style if necessary */
+            margin-top: 20px; /* Ensure there is space at the bottom of the page */
+            background-color: #1A5276; /* Footer blue */
+            color: white;
+            text-align: right;
+            padding: 10px 20px;
+            width: 100%; /* Ensure full width */
+            box-shadow: none; /* Remove any shadow if it was globally applied */
+        }
+        
+        footer small {
+            font-size: 0.75em; /* Smaller font size for the copyright text */
+        }
 
         /* Active/Selected state */
         nav ul li a.active {
@@ -251,7 +265,7 @@
         </div>
     </div>
     <footer>
-        <small>Copyright © 2024 Balsant Shivanand Tiwari</small>
+        <small>Copyright © 2024 Balsant S. Tiwari</small>
     </footer>
     <!-- JavaScript for Language Selector and Active Class -->
     <script>
