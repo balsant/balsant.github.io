@@ -150,17 +150,17 @@
             if (category === 'applications') {
                 content.innerHTML = `
                     <div class="app-list" style="display: flex; gap: 10px; margin-bottom: 20px;">
-                        <a href="#" id="app1Link" onclick="showApp('app1')" 
-                           style="padding: 10px 20px; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; color: #333; font-size: 1em; background-color: #f9f9f9; display: inline-block; transition: all 0.3s;">
+                        <a href="#" id="app1Link" onclick="showApp('app1')"
+                           style="padding: 10px 20px; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; color: #333; font-size: 1em; background-color: #f9f9f9; transition: all 0.3s;">
                            Compensation Coils Calculator
                         </a>
-                        <a href="#" id="app2Link" onclick="showApp('app2')" 
-                           style="padding: 10px 20px; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; color: #333; font-size: 1em; background-color: #f9f9f9; display: inline-block; transition: all 0.3s;">
+                        <a href="#" id="app2Link" onclick="showApp('app2')"
+                           style="padding: 10px 20px; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; color: #333; font-size: 1em; background-color: #f9f9f9; transition: all 0.3s;">
                            Web App 2
                         </a>
                     </div>
                     <div class="app-container" id="app-container"></div>
-                `;
+                    `;
             } else {
                 content.innerHTML = `
                     <h1>${category.charAt(0).toUpperCase() + category.slice(1)}</h1>
@@ -172,18 +172,22 @@
         // Highlight the selected app and display its content
         function showApp(app) {
             // Clear active state from all app links
-            document.querySelectorAll('.app-list ul li a').forEach(link => {
-                link.classList.remove('active');
+            document.querySelectorAll('.app-list a').forEach(link => {
+                link.style.backgroundColor = "#f9f9f9"; // Reset background color
+                link.style.color = "#333";             // Reset text color
+                link.style.borderColor = "#ddd";       // Reset border color
             });
-
+        
             // Highlight the clicked app
             const appLink = document.getElementById(`${app}Link`);
-            appLink.classList.add('active');
-
+            appLink.style.backgroundColor = "#2E86C1"; // Highlight background
+            appLink.style.color = "white";             // Highlight text color
+            appLink.style.borderColor = "#2E86C1";     // Highlight border color
+        
             // Show the selected app's iframe
             const appContainer = document.getElementById('app-container');
             appContainer.style.display = 'block';
-
+        
             if (app === 'app1') {
                 appContainer.innerHTML = `<iframe src="Resources/Apps/app1.html"></iframe>`;
             } else if (app === 'app2') {
