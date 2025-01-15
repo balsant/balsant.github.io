@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coil Requirements Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            padding: 10px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #e9ffe9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Coil Requirements Calculator</h1>
+        <form id="calculator">
+            <label for="turns">Number of Turns (N):</label>
+            <input type="number" id="turns" value="90" min="10" max="200" required>
+
+            <label for="thickness">Wire Thickness (mm):</label>
+            <input type="number" id="thickness" value="1.0" step="0.1" min="0.1" max="5.0" required>
+
+            <label for="loop">Size of Square Loop (cm):</label>
+            <input type="number" id="loop" value="60" step="1" min="10" max="200" required>
+
+            <label for="field">Magnetic Field (T):</label>
+            <input type="number" id="field" value="0.00005" step="0.00001" required>
+
+            <label for="configuration">Configuration:</label>
+            <select id="configuration">
+                <option value="Series">Series</option>
+                <option value="Parallel">Parallel</option>
+            </select>
+
+            <button type="button" onclick="calculate()">Calculate</button>
+        </form>
+
+        <div id="results" class="results" style="display: none;">
+            <h3>Results</h3>
+            <p><b>Current (I):</b> <span id="current"></span> mA</p>
+            <p><b>Voltage (V):</b> <span id="voltage"></span> V</p>
+            <p><b>Power (P):</b> <span id="power"></span> W</p>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            // Input values
+            const N = parseInt(document.getElementById('turns').value);
+            const t = parseFloat(document.getElementById('thickness').value);
+            const a = parseFloat(document.getElementById('loop').value);
+            const B = parseFloat(document.getElementById('field').value);
+            const configuration = document.getElementById('configuration').value;
+
+            // Constants
+            const mu_0 = 4 * Math.PI * 1e-7; // Permeability of free space (T·m/A)
+            const rho = 1.68e-8; // Resistivity of copper (Ohm·m)
+
+            // Calculations
+            const radius = t / 2 / 1000; // Radius in meters
+            const A = Math.PI * Math.pow(radius, 2); // Cross-sectional area (m^2)
+            const L = 4 * a * N / 100; // Total length of the wire (m)
+            const R = rho * L / A; // Resistance of the coil (Ohms)
+            let I = (B * Math.PI * a / 100) / (4 * mu_0 * N); // Current in Amps
+
+            let V, P;
+            if (configuration === "Series") {
+                V = 3 * I * R; // Voltage
+                P = I * V; // Power
+            } else {
+                V = I * R; // Voltage per coil
+                const I_total = 3 * I; // Total current
+                P = I_total * V; // Power
+                I = I_total; // Update I for display
+            }
+
+            // Update results
+            document.getElementById('current').textContent = (I * 1000).toFixed(4); // Convert to mA
+            document.getElementById('voltage').textContent = V.toFixed(4);
+            document.getElementById('power').textContent = P.toFixed(4);
+
+            // Show results
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
