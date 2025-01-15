@@ -48,7 +48,7 @@ nav ul li a:hover {
 
 /* Active/Selected state */
 nav ul li a.active {
-    background-color: #21618C !important; /* #2E86C1 #e74c3c Ensures it's applied */
+    background-color: #2e81c1 !important; /* #2E86C1 #e74c3c Ensures it's applied */
 }
 
 /* Main Content */
