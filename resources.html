@@ -114,10 +114,10 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <ul>
+                <li><a href="#" id="applicationsLink" onclick="showCategory('applications')">Applications</a></li>
                 <li><a href="#" id="notesLink" onclick="showCategory('notes')">Notes</a></li>
                 <li><a href="#" id="strontiumLink" onclick="showCategory('strontium')">Strontium</a></li>
                 <li><a href="#" id="papersLink" onclick="showCategory('papers')">Papers</a></li>
-                <li><a href="#" id="applicationsLink" onclick="showCategory('applications')">Applications</a></li>
             </ul>
         </div>
 
@@ -139,14 +139,14 @@
             document.querySelectorAll('.sidebar ul li a').forEach(link => {
                 link.classList.remove('active');
             });
-
+    
             // Highlight the clicked category
             const categoryLink = document.getElementById(`${category}Link`);
             categoryLink.classList.add('active');
-
+    
             // Update the content area
             const content = document.getElementById('content');
-
+    
             if (category === 'applications') {
                 content.innerHTML = `
                     <div class="app-list" style="display: flex; gap: 10px; margin-bottom: 20px;">
@@ -168,7 +168,7 @@
                 `;
             }
         }
-
+    
         // Highlight the selected app and display its content
         function showApp(app) {
             // Clear active state from all app links
@@ -177,23 +177,37 @@
                 link.style.color = "#333";             // Reset text color
                 link.style.borderColor = "#ddd";       // Reset border color
             });
-        
+    
             // Highlight the clicked app
             const appLink = document.getElementById(`${app}Link`);
             appLink.style.backgroundColor = "#2E86C1"; // Highlight background
             appLink.style.color = "white";             // Highlight text color
             appLink.style.borderColor = "#2E86C1";     // Highlight border color
-        
+    
             // Show the selected app's iframe
             const appContainer = document.getElementById('app-container');
             appContainer.style.display = 'block';
-        
+    
             if (app === 'app1') {
                 appContainer.innerHTML = `<iframe src="Resources/Apps/app1.html"></iframe>`;
             } else if (app === 'app2') {
                 appContainer.innerHTML = `<iframe src="Resources/Apps/app2.html"></iframe>`;
             }
         }
+    
+        // Highlight the Resources link in the top navigation bar
+        function highlightResourcesNav() {
+            const resourcesLink = document.getElementById('resourcesLink');
+            // Clear active state from other navigation links
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.classList.remove('active');
+            });
+            // Highlight Resources link
+            resourcesLink.classList.add('active');
+        }
+    
+        // Run the highlight function when the page loads
+        document.addEventListener('DOMContentLoaded', highlightResourcesNav);
     </script>
 </body>
 </html>
