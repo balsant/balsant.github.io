@@ -149,12 +149,15 @@
 
             if (category === 'applications') {
                 content.innerHTML = `
-                    <h1>Applications</h1>
-                    <div class="app-list">
-                        <ul>
-                            <li><a href="#" id="app1Link" onclick="showApp('app1')">Compensation Coils Calculator</a></li>
-                            <li><a href="#" id="app2Link" onclick="showApp('app2')">Web App 2</a></li>
-                        </ul>
+                    <div class="app-list" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <a href="#" id="app1Link" onclick="showApp('app1')" 
+                           style="padding: 10px 20px; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; color: #333; font-size: 1em; background-color: #f9f9f9; display: inline-block; transition: all 0.3s;">
+                           Compensation Coils Calculator
+                        </a>
+                        <a href="#" id="app2Link" onclick="showApp('app2')" 
+                           style="padding: 10px 20px; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; color: #333; font-size: 1em; background-color: #f9f9f9; display: inline-block; transition: all 0.3s;">
+                           Web App 2
+                        </a>
                     </div>
                     <div class="app-container" id="app-container"></div>
                 `;
